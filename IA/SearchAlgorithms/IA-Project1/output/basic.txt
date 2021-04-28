@@ -1,0 +1,254 @@
+Solutions found: 3
+Solution #1:
+	Step #0:
+		* Start
+		* Has stone: False
+	Step #1:
+		* Moved to (0, 1) from (0, 0)
+		* Added a color shoes in backpack
+		* Has stone: False
+	Step #2:
+		* Moved to (0, 2) from (0, 1)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #3:
+		* Moved to (0, 3) from (0, 2)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #4:
+		* Moved to (0, 4) from (0, 3)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #5:
+		* Moved to (0, 5) from (0, 4)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #6:
+		* Moved to (0, 6) from (0, 5)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #7:
+		* Moved to (1, 6) from (0, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #8:
+		* Moved to (2, 6) from (1, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #9:
+		* Moved to (3, 6) from (2, 6)
+		* Has the stone
+		* Has stone: True
+	Step #10:
+		* Moved to (2, 6) from (3, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #11:
+		* Moved to (1, 6) from (2, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #12:
+		* Moved to (0, 6) from (1, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #13:
+		* Moved to (0, 5) from (0, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #14:
+		* Moved to (0, 4) from (0, 5)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #15:
+		* Moved to (0, 3) from (0, 4)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #16:
+		* Moved to (0, 2) from (0, 3)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #17:
+		* Moved to (0, 1) from (0, 2)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #18:
+		* Moved to (0, 0) from (0, 1)
+		* Has stone: True
+	Summary:
+		Time: 0.516600 seconds
+		Nodes: 8271
+
+Solution #2:
+	Step #0:
+		* Start
+		* Has stone: False
+	Step #1:
+		* Moved to (0, 1) from (0, 0)
+		* Added a color shoes in backpack
+		* Has stone: False
+	Step #2:
+		* Moved to (0, 2) from (0, 1)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #3:
+		* Moved to (0, 3) from (0, 2)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #4:
+		* Moved to (0, 4) from (0, 3)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #5:
+		* Moved to (0, 5) from (0, 4)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #6:
+		* Moved to (0, 6) from (0, 5)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #7:
+		* Moved to (1, 6) from (0, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #8:
+		* Moved to (2, 6) from (1, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #9:
+		* Moved to (3, 6) from (2, 6)
+		* Has the stone
+		* Has stone: True
+	Step #10:
+		* Moved to (4, 6) from (3, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #11:
+		* Moved to (4, 5) from (4, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #12:
+		* Moved to (4, 4) from (4, 5)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #13:
+		* Moved to (3, 4) from (4, 4)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #14:
+		* Moved to (2, 4) from (3, 4)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #15:
+		* Moved to (2, 3) from (2, 4)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #16:
+		* Moved to (2, 2) from (2, 3)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #17:
+		* Moved to (2, 1) from (2, 2)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #18:
+		* Moved to (2, 0) from (2, 1)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #19:
+		* Moved to (1, 0) from (2, 0)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #20:
+		* Moved to (0, 0) from (1, 0)
+		* Has stone: True
+	Summary:
+		Time: 2.030400 seconds
+		Nodes: 28700
+
+Solution #3:
+	Step #0:
+		* Start
+		* Has stone: False
+	Step #1:
+		* Moved to (0, 1) from (0, 0)
+		* Added a color shoes in backpack
+		* Has stone: False
+	Step #2:
+		* Moved to (0, 2) from (0, 1)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #3:
+		* Moved to (0, 3) from (0, 2)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #4:
+		* Moved to (0, 4) from (0, 3)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #5:
+		* Moved to (0, 5) from (0, 4)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #6:
+		* Moved to (0, 6) from (0, 5)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #7:
+		* Moved to (1, 6) from (0, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #8:
+		* Moved to (2, 6) from (1, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: False
+	Step #9:
+		* Moved to (3, 6) from (2, 6)
+		* Has the stone
+		* Has stone: True
+	Step #10:
+		* Moved to (4, 6) from (3, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #11:
+		* Moved to (3, 6) from (4, 6)
+		* Replaced backpack with @ color shoes
+		* Has stone: True
+	Step #12:
+		* Moved to (2, 6) from (3, 6)
+		* Has stone: True
+	Step #13:
+		* Moved to (1, 6) from (2, 6)
+		* Replaced backpack with a color shoes
+		* Has stone: True
+	Step #14:
+		* Changed shoes with backpack and moved to (0, 6) from (1, 6)
+		* Removed shoes from the backpack as they are completly used
+		* Added a color shoes in backpack
+		* Has stone: True
+	Step #15:
+		* Moved to (0, 5) from (0, 6)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #16:
+		* Moved to (0, 4) from (0, 5)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #17:
+		* Moved to (0, 3) from (0, 4)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #18:
+		* Moved to (0, 2) from (0, 3)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #19:
+		* Moved to (0, 1) from (0, 2)
+		* Replaced equiped shoes with a color shoes and discarded previous pair
+		* Has stone: True
+	Step #20:
+		* Moved to (0, 0) from (0, 1)
+		* Has stone: True
+	Summary:
+		Time: 2.769200 seconds
+		Nodes: 36741
+

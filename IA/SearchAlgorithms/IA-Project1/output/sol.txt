@@ -1,0 +1,159 @@
+Solutions found: 3
+Solution #1:
+	Step #0:
+		* Start
+		* Has stone: False
+	Step #1:
+		* Moved to (1, 1) from (0, 1)
+		* Added a color shoes in backpack
+		* Has stone: False
+	Step #2:
+		* Moved to (1, 2) from (1, 1)
+		* Has stone: False
+	Step #3:
+		* Changed shoes with backpack and moved to (2, 2) from (1, 2)
+		* Removed shoes from the backpack as they are completly used
+		* Has stone: False
+	Step #4:
+		* Moved to (3, 2) from (2, 2)
+		* Added g color shoes in backpack
+		* Has stone: False
+	Step #5:
+		* Moved to (4, 2) from (3, 2)
+		* Has the stone
+		* Has stone: True
+	Step #6:
+		* Changed shoes with backpack and moved to (4, 1) from (4, 2)
+		* Removed shoes from the backpack as they are completly used
+		* Has stone: True
+	Step #7:
+		* Moved to (4, 0) from (4, 1)
+		* Added v color shoes in backpack
+		* Has stone: True
+	Step #8:
+		* Moved to (4, 1) from (4, 0)
+		* Has stone: True
+	Step #9:
+		* Changed shoes with backpack and moved to (3, 1) from (4, 1)
+		* Removed shoes from the backpack as they are completly used
+		* Has stone: True
+	Step #10:
+		* Moved to (2, 1) from (3, 1)
+		* Added r color shoes in backpack
+		* Has stone: True
+	Step #11:
+		* Changed shoes with backpack and moved to (1, 1) from (2, 1)
+		* Has stone: True
+	Step #12:
+		* Moved to (0, 1) from (1, 1)
+		* Has stone: True
+	Summary:
+		Time: 0.001800 seconds
+		Nodes: 60
+
+Solution #2:
+	Step #0:
+		* Start
+		* Has stone: False
+	Step #1:
+		* Moved to (1, 1) from (0, 1)
+		* Added a color shoes in backpack
+		* Has stone: False
+	Step #2:
+		* Moved to (1, 2) from (1, 1)
+		* Has stone: False
+	Step #3:
+		* Changed shoes with backpack and moved to (2, 2) from (1, 2)
+		* Removed shoes from the backpack as they are completly used
+		* Has stone: False
+	Step #4:
+		* Moved to (3, 2) from (2, 2)
+		* Added g color shoes in backpack
+		* Has stone: False
+	Step #5:
+		* Moved to (4, 2) from (3, 2)
+		* Has the stone
+		* Has stone: True
+	Step #6:
+		* Changed shoes with backpack and moved to (4, 1) from (4, 2)
+		* Removed shoes from the backpack as they are completly used
+		* Has stone: True
+	Step #7:
+		* Moved to (4, 0) from (4, 1)
+		* Added v color shoes in backpack
+		* Has stone: True
+	Step #8:
+		* Moved to (4, 1) from (4, 0)
+		* Has stone: True
+	Step #9:
+		* Changed shoes with backpack and moved to (3, 1) from (4, 1)
+		* Removed shoes from the backpack as they are completly used
+		* Has stone: True
+	Step #10:
+		* Moved to (2, 1) from (3, 1)
+		* Added r color shoes in backpack
+		* Has stone: True
+	Step #11:
+		* Changed shoes with backpack and moved to (1, 1) from (2, 1)
+		* Replaced backpack with a color shoes
+		* Has stone: True
+	Step #12:
+		* Moved to (0, 1) from (1, 1)
+		* Has stone: True
+	Summary:
+		Time: 0.001900 seconds
+		Nodes: 61
+
+Solution #3:
+	Step #0:
+		* Start
+		* Has stone: False
+	Step #1:
+		* Moved to (1, 1) from (0, 1)
+		* Added a color shoes in backpack
+		* Has stone: False
+	Step #2:
+		* Moved to (1, 2) from (1, 1)
+		* Has stone: False
+	Step #3:
+		* Changed shoes with backpack and moved to (2, 2) from (1, 2)
+		* Removed shoes from the backpack as they are completly used
+		* Has stone: False
+	Step #4:
+		* Moved to (3, 2) from (2, 2)
+		* Added g color shoes in backpack
+		* Has stone: False
+	Step #5:
+		* Moved to (4, 2) from (3, 2)
+		* Has the stone
+		* Has stone: True
+	Step #6:
+		* Changed shoes with backpack and moved to (4, 1) from (4, 2)
+		* Removed shoes from the backpack as they are completly used
+		* Has stone: True
+	Step #7:
+		* Moved to (4, 0) from (4, 1)
+		* Added v color shoes in backpack
+		* Has stone: True
+	Step #8:
+		* Changed shoes with backpack and moved to (3, 0) from (4, 0)
+		* Has stone: True
+	Step #9:
+		* Moved to (3, 1) from (3, 0)
+		* Has stone: True
+	Step #10:
+		* Moved to (2, 1) from (3, 1)
+		* Replaced backpack with r color shoes
+		* Has stone: True
+	Step #11:
+		* Changed shoes with backpack and moved to (1, 1) from (2, 1)
+		* Removed shoes from the backpack as they are completly used
+		* Added a color shoes in backpack
+		* Has stone: True
+	Step #12:
+		* Moved to (0, 1) from (1, 1)
+		* Has stone: True
+	Summary:
+		Time: 0.002100 seconds
+		Nodes: 65
+
