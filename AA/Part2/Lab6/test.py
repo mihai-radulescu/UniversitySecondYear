@@ -1,102 +1,168 @@
-from collections import namedtuple
-from pprint import pprint as pp
-import sys
+# A Python3 program to check if a given point 
+# lies inside a given polygon
+# Refer https://www.geeksforgeeks.org/check-if-two-given-line-segments-intersect/
+# for explanation of functions onSegment(),
+# orientation() and doIntersect() 
  
-Pt = namedtuple('Pt', 'x, y')               # Point
-Edge = namedtuple('Edge', 'a, b')           # Polygon edge from a to b
-Poly = namedtuple('Poly', 'name, edges')    # Polygon
+# Define Infinite (Using INT_MAX 
+# caused overflow problems)
+INT_MAX = 10000
  
-_eps = 0.00001
-_huge = sys.float_info.max
-_tiny = sys.float_info.min
+# Given three colinear points p, q, r, 
+# the function checks if point q lies
+# on line segment 'pr'
+def onSegment(p:tuple, q:tuple, r:tuple) -> bool:
+     
+    if ((q[0] <= max(p[0], r[0])) &
+        (q[0] >= min(p[0], r[0])) &
+        (q[1] <= max(p[1], r[1])) &
+        (q[1] >= min(p[1], r[1]))):
+        return True
+         
+    return False
  
-def rayintersectseg(p, edge):
-    ''' takes a point p=Pt() and an edge of two endpoints a,b=Pt() of a line segment returns boolean
-    '''
-    a,b = edge
-    if a.y > b.y:
-        a,b = b,a
-    if p.y == a.y or p.y == b.y:
-        p = Pt(p.x, p.y + _eps)
- 
-    intersect = False
- 
-    if (p.y > b.y or p.y < a.y) or (
-        p.x > max(a.x, b.x)):
-        return False
- 
-    if p.x < min(a.x, b.x):
-        intersect = True
+# To find orientation of ordered triplet (p, q, r).
+# The function returns following values
+# 0 --> p, q and r are colinear
+# 1 --> Clockwise
+# 2 --> Counterclockwise
+def orientation(p:tuple, q:tuple, r:tuple) -> int:
+     
+    val = (((q[1] - p[1]) *
+            (r[0] - q[0])) -
+           ((q[0] - p[0]) *
+            (r[1] - q[1])))
+            
+    if val == 0:
+        return 0
+    if val > 0:
+        return 1 # Collinear
     else:
-        if abs(a.x - b.x) > _tiny:
-            m_red = (b.y - a.y) / float(b.x - a.x)
-        else:
-            m_red = _huge
-        if abs(a.x - p.x) > _tiny:
-            m_blue = (p.y - a.y) / float(p.x - a.x)
-        else:
-            m_blue = _huge
-        intersect = m_blue >= m_red
-    return intersect
+        return 2 # Clock or counterclock
  
-def _odd(x): return x%2 == 1
+def doIntersect(p1, q1, p2, q2):
+     
+    # Find the four orientations needed for 
+    # general and special cases
+    o1 = orientation(p1, q1, p2)
+    o2 = orientation(p1, q1, q2)
+    o3 = orientation(p2, q2, p1)
+    o4 = orientation(p2, q2, q1)
  
-def ispointinside(p, poly):
-    ln = len(poly)
-    return _odd(sum(rayintersectseg(p, edge)
-                    for edge in poly.edges ))
+    # General case
+    if (o1 != o2) and (o3 != o4):
+        return True
+     
+    # Special Cases
+    # p1, q1 and p2 are colinear and
+    # p2 lies on segment p1q1
+    if (o1 == 0) and (onSegment(p1, p2, q1)):
+        return True
  
-def polypp(poly):
-    print ("\n  Polygon(name='%s', edges=(" % poly.name)
-    print ('   ', ',\n    '.join(str(e) for e in poly.edges) + '\n    ))')
+    # p1, q1 and p2 are colinear and
+    # q2 lies on segment p1q1
+    if (o2 == 0) and (onSegment(p1, q2, q1)):
+        return True
  
+    # p2, q2 and p1 are colinear and
+    # p1 lies on segment p2q2
+    if (o3 == 0) and (onSegment(p2, p1, q2)):
+        return True
+ 
+    # p2, q2 and q1 are colinear and
+    # q1 lies on segment p2q2
+    if (o4 == 0) and (onSegment(p2, q1, q2)):
+        return True
+ 
+    return False
+ 
+# Returns true if the point p lies 
+# inside the polygon[] with n vertices
+def is_inside_polygon(points:list, p:tuple) -> bool:
+     
+    n = len(points)
+     
+    # There must be at least 3 vertices
+    # in polygon
+    if n < 3:
+        return False
+         
+    # Create a point for line segment
+    # from p to infinite
+    extreme = (INT_MAX, p[1])
+    count = i = 0
+     
+    while True:
+        next = (i + 1) % n
+         
+        # Check if the line segment from 'p' to 
+        # 'extreme' intersects with the line 
+        # segment from 'polygon[i]' to 'polygon[next]'
+        if (doIntersect(points[i],
+                        points[next],
+                        p, extreme)):
+                             
+            # If the point 'p' is colinear with line 
+            # segment 'i-next', then check if it lies 
+            # on segment. If it lies, return true, otherwise false
+            if orientation(points[i], p,
+                           points[next]) == 0:
+                return onSegment(points[i], p,
+                                 points[next])
+                                  
+            count += 1
+             
+        i = next
+         
+        if (i == 0):
+            break
+         
+    # Return true if count is odd, false otherwise
+    return (count % 2 == 1)
+ 
+# Driver code
 if __name__ == '__main__':
-    polys = [
-      Poly(name='square', edges=(
-        Edge(a=Pt(x=0, y=0), b=Pt(x=10, y=0)),
-        Edge(a=Pt(x=10, y=0), b=Pt(x=10, y=10)),
-        Edge(a=Pt(x=10, y=10), b=Pt(x=0, y=10)),
-        Edge(a=Pt(x=0, y=10), b=Pt(x=0, y=0))
-        )),
-      Poly(name='square_hole', edges=(
-        Edge(a=Pt(x=0, y=0), b=Pt(x=10, y=0)),
-        Edge(a=Pt(x=10, y=0), b=Pt(x=10, y=10)),
-        Edge(a=Pt(x=10, y=10), b=Pt(x=0, y=10)),
-        Edge(a=Pt(x=0, y=10), b=Pt(x=0, y=0)),
-        Edge(a=Pt(x=2.5, y=2.5), b=Pt(x=7.5, y=2.5)),
-        Edge(a=Pt(x=7.5, y=2.5), b=Pt(x=7.5, y=7.5)),
-        Edge(a=Pt(x=7.5, y=7.5), b=Pt(x=2.5, y=7.5)),
-        Edge(a=Pt(x=2.5, y=7.5), b=Pt(x=2.5, y=2.5))
-        )),
-      Poly(name='strange', edges=(
-        Edge(a=Pt(x=0, y=0), b=Pt(x=2.5, y=2.5)),
-        Edge(a=Pt(x=2.5, y=2.5), b=Pt(x=0, y=10)),
-        Edge(a=Pt(x=0, y=10), b=Pt(x=2.5, y=7.5)),
-        Edge(a=Pt(x=2.5, y=7.5), b=Pt(x=7.5, y=7.5)),
-        Edge(a=Pt(x=7.5, y=7.5), b=Pt(x=10, y=10)),
-        Edge(a=Pt(x=10, y=10), b=Pt(x=10, y=0)),
-        Edge(a=Pt(x=10, y=0), b=Pt(x=2.5, y=2.5))
-        )),
-      Poly(name='exagon', edges=(
-        Edge(a=Pt(x=3, y=0), b=Pt(x=7, y=0)),
-        Edge(a=Pt(x=7, y=0), b=Pt(x=10, y=5)),
-        Edge(a=Pt(x=10, y=5), b=Pt(x=7, y=10)),
-        Edge(a=Pt(x=7, y=10), b=Pt(x=3, y=10)),
-        Edge(a=Pt(x=3, y=10), b=Pt(x=0, y=5)),
-        Edge(a=Pt(x=0, y=5), b=Pt(x=3, y=0))
-        )),
-      ]
-    testpoints = (Pt(x=5, y=5), Pt(x=5, y=8),
-                  Pt(x=-10, y=5), Pt(x=0, y=5),
-                  Pt(x=10, y=5), Pt(x=8, y=5),
-                  Pt(x=10, y=10))
+     
+    polygon1 = [ (0, 0), (10, 0), (10, 10), (0, 10), (10, 15)]
+     
+    p = (20, 20)
+    if (is_inside_polygon(points = polygon1, p = p)):
+      print ('Yes')
+    else:
+      print ('No')
+       
+    p = (5, 5)
+    if (is_inside_polygon(points = polygon1, p = p)):
+      print ('Yes')
+    else:
+      print ('No')
  
-    print ("\n TESTING WHETHER POINTS ARE WITHIN POLYGONS")
-    for poly in polys:
-        polypp(poly)
-        print ('   ', '\t'.join("%s: %s" % (p, ispointinside(p, poly))
-                               for p in testpoints[:3]))
-        print ('   ', '\t'.join("%s: %s" % (p, ispointinside(p, poly))
-                               for p in testpoints[3:6]))
-        print ('   ', '\t'.join("%s: %s" % (p, ispointinside(p, poly))
-                               for p in testpoints[6:]))
+    # polygon2 = [ (0, 0), (5, 0), (5, 5), (3, 3) ]
+     
+    # p = (3, 3)
+    # if (is_inside_polygon(points = polygon2, p = p)):
+    #   print ('Yes')
+    # else:
+    #   print ('No')
+       
+    # p = (5, 1)
+    # if (is_inside_polygon(points = polygon2, p = p)):
+    #   print ('Yes')
+    # else:
+    #   print ('No')
+       
+    # p = (8, 1)
+    # if (is_inside_polygon(points = polygon2, p = p)):
+    #   print ('Yes')
+    # else:
+    #   print ('No')
+     
+    # polygon3 = [ (0, 0), (10, 0), (10, 10), (0, 10) ]
+     
+    # p = (-1, 10)
+    # if (is_inside_polygon(points = polygon3, p = p)):
+    #   print ('Yes')
+    # else:
+    #   print ('No')
+       
+# This code is contributed by Vikas Chitturi
