@@ -1,3 +1,7 @@
+'''
+Sursa formule din functia ccc: https://en.wikipedia.org/wiki/Circumscribed_circle#Circumcenter_coordinates
+'''
+
 from math import sqrt
 
 def distance(A:tuple, B:tuple):
@@ -26,13 +30,9 @@ def ccc(A:tuple, B:tuple, C:tuple):
 
 def check_position(K:tuple, U:tuple, r:int):
     
-    #dst = int(abs(distance(K, U)))
-    #r = int(r)
     dst = abs(distance(K, U))
     dst = round(dst, 3)
     r = round(r, 3)
-    # print(r)
-    # print(dst)
 
     if dst > r:
         print("In exterior")

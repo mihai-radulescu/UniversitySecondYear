@@ -134,15 +134,15 @@ def readInput():
  
 if __name__ == '__main__':
     #poly = [ (0, 0), (10, 0), (10, 10), (0, 10), (10, 15)]
-    poly = [ (0, 6), (0, 0), (6,0), (6, 6), (2, 6), (2, 2), (4, 2), (4, 5), (5, 5), (5, 1), (1, 1), (1, 6)]
-    point = (3, 2)
+    #poly = [ (0, 6), (0, 0), (6,0), (6, 6), (2, 6), (2, 2), (4, 2), (4, 5), (5, 5), (5, 1), (1, 1), (1, 6)]
+    #point = (3, 2)
     
-    # poly = readInput()
+    poly = readInput()
 
-    # x, y = input("Point to check: ").split()
-    # x = int(x)
-    # y = int(y)
-    # point = (x, y)    
+    x, y = input("Point to check: ").split()
+    x = int(x)
+    y = int(y)
+    point = (x, y)    
 
     ans = is_inside_polygon(poly, point)
     
