@@ -1,3 +1,7 @@
+'''
+Sursa formule din functia ccc: https://en.wikipedia.org/wiki/Circumscribed_circle#Circumcenter_coordinates
+'''
+
 from math import sqrt
 
 def distance(A:tuple, B:tuple):
