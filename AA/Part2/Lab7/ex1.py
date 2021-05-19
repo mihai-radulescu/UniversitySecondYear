@@ -1,7 +1,7 @@
 from math import inf
 
 def readInput(semi:list):
-    n = int(input("Nr of semiplanes:\n>> "))
+    n = int(input("Nr de semiplane:\n>> "))
 
     for i in range(0, n):
         a, b, c = input(">> ").split()
@@ -15,7 +15,7 @@ def main():
     readInput(semi)
     
     maxX = maxY = inf
-    minX = minY = inf
+    minX = minY = -inf
 
     for plane in semi:
         upperBound = inf
@@ -38,12 +38,20 @@ def main():
             minX = max(minX, lowerBound)
             maxX = min(maxX, upperBound)
 
+    # print(minX, maxX, minY, maxY)
+
+    # print(lowerBound, upperBound)
+
     if minX > maxX or minY > maxY:
-        print("empty")
-    elif (max(maxX, maxY) > inf) or (min(minX, minY) > -inf):
-        print("infinity")
+        print("vid")
+        return
+    
+    if (max(maxX, maxY) >= inf) or (min(minX, minY) <= -inf):
+        print("infinit")
+        return
     else:
         print("finit")
+        return
         
 
 if __name__ == '__main__':
