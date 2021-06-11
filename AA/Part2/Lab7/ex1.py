@@ -21,6 +21,7 @@ def main():
         upperBound = inf
         lowerBound = -inf
 
+        # Verific daca semiplanul este vertical sau orizontal
         if plane[0] == 0:
             k = plane[1]
         elif plane[1] == 0:
@@ -32,25 +33,25 @@ def main():
             lowerBound = -plane[2] / k
 
         if plane[0] == 0:
-            minY = max(minY, lowerBound)
             maxY = min(maxY, upperBound)
+            minY = max(minY, lowerBound)
         elif plane[1] == 0:
-            minX = max(minX, lowerBound)
             maxX = min(maxX, upperBound)
+            minX = max(minX, lowerBound)
 
     # print(minX, maxX, minY, maxY)
 
     # print(lowerBound, upperBound)
 
     if minX > maxX or minY > maxY:
-        print("vid")
+        print("Intersectie vida")
         return
     
-    if (max(maxX, maxY) >= inf) or (min(minX, minY) <= -inf):
-        print("infinit")
+    if (max(maxX, maxY) == inf) or (min(minX, minY) == -inf):
+        print("Intersectie nevida, nemarginita")
         return
     else:
-        print("finit")
+        print("Intersectie nevida, marginita")
         return
         
 
